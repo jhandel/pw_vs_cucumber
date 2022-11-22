@@ -1,19 +1,23 @@
 name: Playwright Tests
 on:
   push:
-    branches: [ main, master ]
+    paths:
+      - 'pw/**'
   pull_request:
-    branches: [ main, master ]
+    paths:
+      - 'pw/**'
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    working-directory: pw
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version: 16
     - name: Install dependencies
+      
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
