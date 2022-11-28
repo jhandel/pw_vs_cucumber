@@ -14,6 +14,11 @@ Feature: The Internet Guinea Pig Website
     Scenario: I go to google and search for cucumber
 
       Given I go to URL "https://www.google.com"
-      When I types "cucumber.io" in "google-page"."searchInput"
-      And I click on "google-page"."btnSearch"
-      Then URL should contain "cucumber.io"
+      When I types "<term>" in "google-page"."searchInput"
+      And I click "google-page"."btnSearch"
+      Then URL should contain "<url_val>"
+
+      Examples:
+      | term        | url_val |           
+      | cucumber.io | cucumber.io | 
+      | playwright  | playwright |               

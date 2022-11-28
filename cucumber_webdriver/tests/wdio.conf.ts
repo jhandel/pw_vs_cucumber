@@ -1,7 +1,7 @@
 import type { Options } from '@wdio/types'
 const path = require('path');
 const dns = require('node:dns');
-
+process.env.PO_FOLDER_PATH =  'tests\\page-objects';
 export const config: Options.Testrunner = {
     //
     // ====================
@@ -27,7 +27,7 @@ export const config: Options.Testrunner = {
         // for all available options
         tsNodeOpts: {
             transpileOnly: true,
-            project: 'test/tsconfig.json'
+            project: 'tests/tsconfig.json'
         }
         // tsconfig-paths is only used if "tsConfigPathsOpts" are provided, if you
         // do please make sure "tsconfig-paths" is installed as dependency
@@ -52,7 +52,7 @@ export const config: Options.Testrunner = {
     // will be called from there.
     //
     specs: [
-        './test/features/**/*.feature'
+        './tests/features/**/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -171,8 +171,8 @@ export const config: Options.Testrunner = {
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
         require: [path.join(__dirname, '..', 'node_modules', 'webdriverio-cucumber-steps', 'index.js'), 
-            "./test/features/step-definitions/**/*.ts", 
-            "./test/features/page-objects/**/*.ts"],
+            "./tests/step-definitions/**/*.ts", 
+            "./tests/page-objects/**/*.ts"],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)

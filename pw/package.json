@@ -1,21 +1,14 @@
 {
-  "name": "pw_vs_cucumber",
+  "name": "pw",
   "version": "1.0.0",
-  "description": "\"# pw_vs_cucumber\"",
+  "description": "",
   "main": "index.js",
   "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jhandel/pw_vs_cucumber.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jhandel/pw_vs_cucumber/issues"
-  },
-  "homepage": "https://github.com/jhandel/pw_vs_cucumber#readme",
   "devDependencies": {
-    "@playwright/test": "^1.28.0"
+    "@playwright/test": "^1.28.1",
+    "csv-parse": "^5.3.3"
   }
 }
