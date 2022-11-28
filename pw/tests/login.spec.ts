@@ -16,6 +16,6 @@ for (const record of records) {
     await page.getByLabel('Password').click();
     await page.getByLabel('Password').fill(record.password);
     await page.getByRole('button', { name: 'Login' }).click();
-    await page.locator('#flash').innerText(record.message);
+    expect(await page.locator('#flash').innerText()).toContain(record.message);
   });
 }
